@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez FixLab - Devis Gratuit Réparation Informatique</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">Fix<span>Lab</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">À Propos</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                <button class="burger-menu" id="burger-menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header section-padding bg-light">
+            <div class="container text-center">
+                <h1>Contactez-Nous</h1>
+                <p>Nous sommes là pour vous aider. Posez vos questions, demandez un diagnostic ou un devis gratuit.</p>
+            </div>
+        </section>
+
+        <section class="contact-details section-padding" id="quote">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-form-container">
+                        <h2 class="section-title" style="text-align:left; margin-bottom:1rem;">Envoyez-nous un message</h2>
+                        <p style="margin-bottom: 30px;">Remplissez le formulaire ci-dessous, nous vous répondrons dans les plus brefs délais.</p>
+                        <form class="contact-form" action="#" method="POST"> <!-- Remplacer action="#" par votre endpoint de traitement -->
+                            <div class="form-group">
+                                <label for="name">Nom complet *</label>
+                                <input type="text" id="name" name="name" required placeholder="Votre nom et prénom">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Adresse e-mail *</label>
+                                <input type="email" id="email" name="email" required placeholder="exemple@domaine.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Numéro de téléphone (Optionnel)</label>
+                                <input type="text" id="phone" name="phone" placeholder="Votre numéro de téléphone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Sujet *</label>
+                                <input type="text" id="subject" name="subject" required placeholder="Ex: Demande de devis, Problème PC portable...">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Votre message *</label>
+                                <textarea id="message" name="message" rows="6" required placeholder="Décrivez votre problème ou votre demande en détail..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Envoyer le Message</button>
+                        </form>
+                    </div>
+                    <div class="contact-info-container">
+                         <h2 class="section-title" style="text-align:left; margin-bottom:1rem;">Nos Coordonnées</h2>
+                         <p style="margin-bottom: 30px;">Vous pouvez également nous joindre directement ou nous rendre visite.</p>
+                        <div class="contact-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Adresse de l'atelier</h4>
+                                <p>FixLab S.R.L.<br>Boulevard Martin 36<br>1340 Ottignies, Belgique</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Téléphone</h4>
+                                <p><a href="tel:+32496032509">0496 03 25 09</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:contact@fixlab.be">contact@fixlab.be</a></p>
+                            </div>
+                        </div>
+                         <h3 style="font-family:var(--heading-font); color:var(--primary-color); margin-top:30px; margin-bottom:15px;">Horaires d'ouverture</h3>
+                         <p>
+                            Lundi : Fermé (Jour de repos)<br>
+                            Mardi : 09:00 – 12:00 & 13:00 – 18:00<br>
+                            Mercredi : 13:00 – 18:00 (Idéal pour les jeunes après l'école)<br>
+                            Jeudi : 09:00 – 12:00 & 13:00 – 18:00<br>
+                            Vendredi : 09:00 – 12:00 & 13:00 – 18:00 (Jour d'affluence)<br>
+                            Samedi : 10:00 – 16:00 (Accessible pour ceux qui travaillent en semaine)<br>
+                            Dimanche : Fermé (Jour de repos)
+                         </p>
+                         <p style="font-size:0.9rem; margin-top:10px;"><em>Interventions sur RDV possibles en dehors des heures pour les professionnels.</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact-map-section">
+            <div class="container">
+                 <h2 class="section-title">Retrouvez-Nous Facilement</h2>
+                <div class="contact-map">
+                    <!-- Remplacez le lien src par le code d'intégration de Google Maps pour Boulevard Martin 36, 1340 Ottignies -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2526.188096981491!2d4.562898076865965!3d50.67009697162937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c22bc8f6940151%3A0xdb62451f5d284174!2sBd%20Martin%2036%2C%201340%20Ottignies-Louvain-la-Neuve!5e0!3m2!1sfr!2sbe!4v1700508305827!5m2!1sfr!2sbe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="footer bg-darker">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>FixLab</h4>
+                    <p>Boulevard Martin 36<br>1340 Ottignies, Belgique</p>
+                    <p><a href="mailto:contact@fixlab.be">contact@fixlab.be</a></p>
+                    <p><a href="tel:+32496032509">0496 03 25 09</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">À Propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Mentions Légales (à créer)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> FixLab S.R.L. Tous droits réservés. Conçu avec <i class="fas fa-heart"></i> par Noah B. (et IA)</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

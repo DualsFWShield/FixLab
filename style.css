@@ -1,0 +1,616 @@
+/* Reset & Base Styles */
+:root {
+    /* Couleurs dérivées du logo */
+    --logo-text-color: #2F3640;       /* Gris foncé du texte du logo */
+    --logo-icon-color: #6C7A89;       /* Gris-bleu désaturé des icônes */
+    --logo-background-teal: #4A919E;  /* Bleu-vert/Sarcelle du fond du logo */
+
+    /* Application aux variables du site */
+    --primary-color: var(--logo-text-color);      /* Principal: Texte foncé */
+    --secondary-color: var(--logo-icon-color);    /* Secondaire: Couleur des icônes pour accents doux */
+    --accent-color: var(--logo-background-teal);  /* Accent: Sarcelle pour les CTA et éléments vifs */
+    
+    --dark-color: #212529;                 /* Un gris très foncé, peut être ajusté si besoin */
+    --medium-gray: #6c757d;                /* Gris moyen pour texte secondaire */
+    --light-gray: #f8f9fa;                 /* Fond clair */
+    --white-color: #ffffff;                /* Blanc */
+    --text-color: #333333;                 /* Couleur du texte principal du corps */
+
+    --heading-font: 'Poppins', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--white-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    color: var(--primary-color); /* Utilise la couleur texte foncée du logo */
+    margin-bottom: 0.8rem;
+}
+
+h1 { font-size: 2.8rem; line-height: 1.2; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color); /* Liens en sarcelle par défaut */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color); /* Au survol, couleur icône logo */
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--light-gray);
+}
+.bg-dark { /* Sera utilisé pour les sections CTA, fond sarcelle, texte blanc */
+    background-color: var(--accent-color);
+    color: var(--white-color);
+}
+.bg-darker { /* Pour le footer, fond gris très foncé */
+    background-color: var(--dark-color);
+    color: #adb5bd;
+}
+.bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark p {
+    color: var(--white-color);
+}
+
+
+.section-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: var(--primary-color); /* Titres de section en gris foncé logo */
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-family: var(--heading-font);
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+    border: 2px solid transparent;
+}
+
+.btn-primary { /* Bouton principal: fond sarcelle, texte blanc */
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    border-color: var(--accent-color);
+}
+.btn-primary:hover {
+    background-color: var(--secondary-color); /* Survol: fond gris-bleu icône */
+    border-color: var(--secondary-color);
+    color: var(--white-color);
+    transform: translateY(-2px);
+}
+
+.btn-secondary { /* Bouton secondaire: bordure texte foncé, texte foncé */
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    transform: translateY(-2px);
+}
+
+.btn-tertiary {
+    color: var(--accent-color); /* Sarcelle */
+    font-weight: 600;
+    padding: 0;
+}
+.btn-tertiary:hover {
+    text-decoration: underline;
+    color: var(--secondary-color);
+}
+
+
+/* Navbar */
+.navbar {
+    background-color: var(--white-color);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--heading-font);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color); /* "Fix" en gris foncé */
+}
+.logo span { /* "Lab" en sarcelle, pour reprendre l'idée d'un accent du logo */
+    color: var(--accent-color); 
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    color: var(--primary-color); /* Liens nav en gris foncé */
+    padding-bottom: 5px;
+    position: relative;
+}
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-color); /* Survol/actif en sarcelle */
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color); /* Soulignement en sarcelle */
+    transition: width 0.3s ease;
+}
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+}
+
+
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--primary-color); /* Burger en gris foncé */
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    /* Dégradé utilisant les couleurs du logo (sarcelle vers gris foncé) */
+    background-image: linear-gradient(rgba(74, 145, 158, 0.85), rgba(47, 54, 64, 0.85)), url('../images/hero-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: var(--white-color);
+    padding: 120px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--white-color);
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255,255,255,0.9);
+}
+
+.hero .btn {
+    margin: 0.5rem;
+}
+.hero .btn-secondary { /* Bouton secondaire sur Hero: texte blanc, bordure blanche */
+    color: var(--white-color);
+    border-color: var(--white-color);
+}
+.hero .btn-secondary:hover {
+    background-color: var(--white-color);
+    color: var(--primary-color); /* Texte gris foncé au survol */
+}
+
+/* About Short Section */
+.about-short .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    align-items: center;
+}
+.about-short .about-image {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Services Overview Section */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--accent-color); /* Icônes de service en sarcelle */
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    margin-bottom: 0.8rem;
+    color: var(--primary-color); /* Titre carte en gris foncé */
+}
+.service-card p {
+    font-size: 0.95rem;
+    color: var(--medium-gray);
+    margin-bottom: 1.5rem;
+}
+.service-card a {
+    font-weight: 600;
+    color: var(--accent-color); /* Lien "Détails" en sarcelle */
+}
+.service-card a i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+.service-card a:hover i {
+    transform: translateX(5px);
+}
+
+/* Why Choose Us Section */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+.feature-item {
+    padding: 20px;
+}
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color); /* Icônes "Pourquoi nous choisir" en sarcelle */
+    margin-bottom: 1rem;
+}
+.feature-item h4 {
+    color: var(--primary-color); /* Titre en gris foncé */
+    margin-bottom: 0.5rem;
+}
+.feature-item p {
+    font-size: 0.95rem;
+    color: var(--medium-gray);
+}
+
+
+/* CTA Section (utilisera .bg-dark) */
+.cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.cta-section p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Footer (utilisera .bg-darker) */
+.footer {
+    padding: 60px 0 30px;
+}
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+.footer-col h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--white-color);
+    position: relative;
+}
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    background-color: var(--accent-color); /* Soulignement titre footer en sarcelle */
+    height: 2px;
+    width: 50px;
+}
+
+.footer-col p, .footer-col ul li a {
+    color: #adb5bd; 
+    font-size: 0.95rem;
+}
+.footer-col ul li {
+    margin-bottom: 0.8rem;
+}
+.footer-col ul li a:hover {
+    color: var(--accent-color); /* Liens footer survol en sarcelle */
+    padding-left: 5px;
+}
+.social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.1);
+    margin-right: 10px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: var(--white-color);
+    transition: all 0.3s ease;
+}
+.social-links a:hover {
+    background-color: var(--accent-color); /* Fond social survol en sarcelle */
+    color: var(--primary-color); /* Icône social survol en gris foncé */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+}
+.footer-bottom p {
+    margin-bottom: 0;
+}
+.footer-bottom .fa-heart {
+    color: var(--accent-color); /* Coeur en sarcelle */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero h1 { font-size: 2.8rem; }
+    .hero p { font-size: 1.1rem; }
+    .about-short .about-content { grid-template-columns: 1fr; text-align: center; }
+    .about-short .about-image { margin: 0 auto 30px auto; max-width: 400px; }
+}
+
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    .section-padding { padding: 60px 0; }
+
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--white-color);
+        position: absolute;
+        top: 70px; 
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+    .nav-links.active {
+        display: flex; 
+    }
+    .nav-links li {
+        margin: 10px 0;
+    }
+    .burger-menu {
+        display: block;
+    }
+
+    .hero h1 { font-size: 2.5rem; }
+    .services-grid, .features-grid, .footer-content {
+        grid-template-columns: 1fr; 
+    }
+    .service-card { margin-bottom: 20px; }
+}
+
+/* Specific page styles */
+
+/* Services Page */
+.service-detail-section {
+    padding: 40px 0;
+    border-bottom: 1px solid #eee;
+}
+.service-detail-section:last-child {
+    border-bottom: none;
+}
+.service-detail-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: center;
+}
+.service-detail-content img {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    max-height: 350px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+.service-detail-section h3 {
+    color: var(--primary-color); /* Titre H3 en gris foncé */
+    margin-bottom: 1rem;
+}
+.service-detail-section ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 1rem;
+}
+.service-detail-section ul li {
+    margin-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+    .service-detail-content { grid-template-columns: 1fr 1fr; }
+    .service-detail-content.image-left img { order: -1; }
+}
+
+
+/* Contact Page */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+@media (min-width: 992px) {
+    .contact-grid { grid-template-columns: 1.5fr 1fr; }
+}
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary-color); /* Label en gris foncé */
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"], /* Ajout pour le téléphone */
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: var(--border-radius);
+    font-family: var(--body-font);
+    font-size: 1rem;
+}
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="tel"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-color); /* Bordure focus en sarcelle */
+    box-shadow: 0 0 0 0.2rem rgba(74, 145, 158, 0.25); /* Ombre focus sarcelle */
+}
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.contact-info-item i {
+    font-size: 1.5rem;
+    color: var(--accent-color); /* Icônes contact en sarcelle */
+    margin-right: 15px;
+    width: 30px;
+    text-align: center;
+}
+.contact-map iframe {
+    width: 100%;
+    height: 350px;
+    border: 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Watermarker Page */
+.watermarker-hero {
+    background-color: var(--logo-text-color); /* Fond hero TMA en gris foncé logo */
+    color: var(--white-color);
+    padding: 80px 0;
+    text-align: center;
+}
+.watermarker-hero h1 { color: var(--white-color); }
+.watermarker-hero p { color: rgba(255,255,255,0.9); }
+
+.feature-list-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+.feature-list-item i {
+    font-size: 1.3rem;
+    color: var(--accent-color); /* Icônes liste TMA en sarcelle */
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+/* Page Header (pour les pages intérieures) */
+.page-header {
+    /* Peut-être un fond sarcelle clair ou garder le light-gray */
+    /* background-color: var(--light-gray); */
+}
+.page-header h1 {
+    color: var(--primary-color); /* Titre de page en gris foncé */
+}
+.page-header p {
+    color: var(--medium-gray);
+}
